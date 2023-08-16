@@ -81,7 +81,27 @@
 
                 <!-- Right elements -->
                 <ul class="navbar-nav flex-row bg-dark bg-opacity-75 p-1 rounded logbox">
-                    <!-- login -->
+                    
+                    {% if user.is_authenticated %}
+                    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+                       <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                           
+                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-mdb-toggle="dropdown" aria-expanded="false">
+                                <img style="width: 25px; height: 25px; object-fit: cover; border-radius: 50%;" src="" alt="">
+                                
+                             </a>
+                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                               <li><a class="dropdown-item" href="{% url 'accountUser' %}">Hesap Ayarları</a></li>
+                               <hr class="dropdown-divider">
+                               <li><a class="dropdown-item" href="{% url 'logoutUser' %}">Oturumu Kapat</a></li>
+                             </ul>
+                          </li>
+                       </ul>
+                    </div>
+                     {% else %}
+                     <!-- login -->
                     <li class="nav-item me-3 me-lg-2">
                         <a class="nlink2 nav-link" href="{% url 'loginPage' %}">
                             <span class="text-white text-capitalize"><i class="fas fa-arrow-right-to-bracket fa-lg">
@@ -89,6 +109,8 @@
                                 Giriş</span>
                         </a>
                     </li>
+                    {% endif %}
+                    
                     <!-- register -->
                     
 
@@ -98,23 +120,7 @@
 
 
 
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                       <li class="nav-item dropdown">
-                        
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                             data-mdb-toggle="dropdown" aria-expanded="false">
-                             <img style="width: 25px; height: 25px; object-fit: cover; border-radius: 50%;" src="" alt="">
-                             
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="{% url 'accountUser' %}">Hesap Ayarları</a></li>
-                            <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="{% url 'logoutUser' %}">Oturumu Kapat</a></li>
-                          </ul>
-                       </li>
-                    </ul>
-                 </div>
+                
 
                    
                     <!-- search -->

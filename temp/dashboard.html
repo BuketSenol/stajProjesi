@@ -58,7 +58,7 @@
 
     .carousel-brand {
         background-color: #f0b966;
-        
+
     }
 
     .user-img {
@@ -405,7 +405,7 @@
                     <div class="card-body">
                         <div>
                             {% for i in category.gamecard_set.all %}
-                            <a href="{% url 'forumDetail' i.slug %}" class="me-3"><i class="fas fa-gamepad me-1"></i>{{ i.gameName }}</a>
+                            <a href="{% url 'forumDetail' i.slug %}" class="me-3"><i class="fas fa-gamepad me-1"></i>{{i.gameName }}</a>
                             {% endfor %}
                         </div>
                     </div>
@@ -432,15 +432,18 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body modal-game">
+
+                            {% for category in gamecategory %}
                             <div>
-                                <p>ÇEVRİMİÇİ OYUNLAR</p>
-                                <p>Çevrimiçi oyunlar bilgi ve paylaşım forumu</p>
+                                <p>{{ category.categoryName }}</p>
+                                <p>{{ category.categoryName }} bilgi ve paylaşım forumu</p>
                             </div>
                             <hr>
 
+                            {% for game in category.gamecard_set.all %}
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <a href="#">Pubg Mobile</a>
+                                    <a href="{% url 'forumDetail' game.slug %}">{{ game.gameName }}</a>
                                     <p>Çoğu oyunda gördüğümüz Battle Royal modunu yaratan Pubg hakkında paylaşımları
                                         burada bulabilirsiniz.
                                     </p>
@@ -452,73 +455,11 @@
                             </div>
                             <hr>
 
+                            {% endfor %}
 
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a href="#">Valorant</a>
-                                    <p>Valorant ile alakalı bütün paylaşımları burada bulabilirsiniz.
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Konular</p>
-                                    <p>21</p>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a href="#">Mobil Oyunlar</a>
-                                    <p>Mobil oyunlar, apklar ve mobil oyun haberleri
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Konular</p>
-                                    <p>96</p>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="d-flex justify-content-between ms-3">
-                                <div>
-                                    <a href="#">PUBG Mobile</a>
-                                    <p>PUBG Mobile haberleri, rehberleri, sorunları, hataları ve çözümleri destek forumu
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Konular</p>
-                                    <p>3</p>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <a href="#">Minecraft</a>
-                                    <p>Minecraft hakkında aklınıza gelebilecek tüm paylaşımları Minecraft forumunda
-                                        bulabilirsiniz.
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Konular</p>
-                                    <p>87</p>
-                                </div>
-                            </div>
-                            <hr>
+                            {% endfor %}
 
 
-                            <div class="d-flex justify-content-between ms-3">
-                                <div>
-                                    <a href="#">Minecraft Plugin</a>
-                                    <p>Minecraft Plugin Paketleri paylaşım forumu
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Konular</p>
-                                    <p>10</p>
-                                </div>
-                            </div>
-                            <hr>
                         </div>
 
                     </div>
