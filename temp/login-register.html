@@ -3,17 +3,58 @@
 
 
 {% block main %}
-<div class="container w-50">
 
+
+
+{% block css %}
+
+<style>
+
+
+section {
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+	min-width: 450px;
+	min-height: 520px;
+	padding: 15px;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+	border-radius: 10px;
+	background: #c9c7c7;
+}
+
+.inp{
+    border-radius: 50px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+.orangeBG{
+
+    background:#D8601D ;
+    color: white;
+}
+</style>
+
+
+{% endblock %}
+
+
+
+<div class="container w-50">
+<section>
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-                aria-controls="pills-login" aria-selected="true">Login</a>
+                aria-controls="pills-login" aria-selected="true">Giriş</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
-                aria-controls="pills-register" aria-selected="false">Register</a>
+                aria-controls="pills-register" aria-selected="false">Kayıt ol</a>
         </li>
     </ul>
     <!-- Pills navs -->
@@ -25,14 +66,14 @@
                 {% csrf_token %}
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="text" name="username" id="loginName" class="form-control" />
-                    <label class="form-label" for="loginName">Username</label>
+                    <input type="text" name="username" id="loginName" class="form-control inp" />
+                    <label class="form-label" for="loginName">Kullanıcı adı</label>
                 </div>
     
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                     <input type="password" name="password" id="loginPassword" class="form-control" />
-                    <label class="form-label" for="loginPassword">Password</label>
+                    <label class="form-label" for="loginPassword">Parola</label>
                 </div>
     
                 <!-- 2 column grid layout -->
@@ -41,22 +82,22 @@
                         <!-- Checkbox -->
                         <div class="form-check mb-3 mb-md-0">
                             <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                            <label class="form-check-label" for="loginCheck"> Remember me </label>
+                            <label class="form-check-label" for="loginCheck"> Beni Hatırla </label>
                         </div>
                     </div>
     
                     <div class="col-md-6 d-flex justify-content-center">
                         <!-- Simple link -->
-                        <a href="#!">Forgot password?</a>
+                        <a href="#!">Şifreni mi unuttun?</a>
                     </div>
                 </div>
     
                 <!-- Submit button -->
-                <button type="submit" name="submit" value="login" class="btn btn-primary btn-block mb-4">Sign in</button>
+                <button type="submit" name="submit" value="login" class="btn orangeBG btn-block mb-4">Giriş</button>
     
                 <!-- Register buttons -->
                 <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
+                    <p>Üye değil misin? <a href="#!">Kayıt ol!</a></p>
                 </div>
             </form>
         </div>
@@ -108,5 +149,8 @@
         </div>
     </div>
     <!-- Pills content -->
+</section>
 </div>
+
+
 {% endblock main %}
