@@ -16,13 +16,28 @@ section {
     margin-top: 50px;
     margin-bottom: 50px;
 	min-width: 450px;
-	min-height: 520px;
+	min-height: auto;
 	padding: 15px;
 	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 	border-radius: 10px;
-	background: #c9c7c7;
+	background: #EEDAD1;
 }
 
+.form-outline .form-control {
+    min-height: auto;
+    padding: .32rem .75rem;
+    border: 0;
+    background: white;
+    transition: all .2s linear;
+ 
+  }
+
+.form-outline .form-control ~ .form-notch .form-notch-leading{
+    border: none !important;
+}
+.form-outline .form-control:focus ~ .form-notch .form-notch-leading{
+    border-color: #d8521d !important;
+}
 .inp{
     border-radius: 50px;
     padding: 15px 20px;
@@ -37,6 +52,14 @@ section {
     background:#D8601D ;
     color: white;
 }
+
+.orangeBG:hover{
+
+    background:#d8521d ;
+    color: white;
+}
+
+
 </style>
 
 
@@ -70,12 +93,14 @@ section {
                     <label class="form-label" for="loginName">Kullanıcı adı</label>
                 </div>
     
+                
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" name="password" id="loginPassword" class="form-control" />
+                    <input type="password" name="password" id="loginPassword" class="form-control inp" />
                     <label class="form-label" for="loginPassword">Parola</label>
                 </div>
-    
+                
+
                 <!-- 2 column grid layout -->
                 <div class="row mb-4">
                     <div class="col-md-6 d-flex justify-content-center">
