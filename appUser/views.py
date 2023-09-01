@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -80,9 +80,29 @@ def postDetail(request, category, pk):
         user = Profile.objects.filter(user = request.user).first()
     else:
         user = Profile.objects.all()
-        
-    if request.method == 'POST':
-        
+    
+    if request.method == 'POST': 
+        submit = request.POST.get("submit")      
+
+        # YORUM SİLME
+        if request.user.is_authenticated:
+            # kullanıcı oturum açmış
+            if submit == 'deleteComment':
+                commentId = request.POST.get('commentId')
+                comment1 = Comment.objects.get(id=commentId)
+                
+                if comment1.author == request.user:
+                    # Yorumun sahibi ise silebilir
+                    comment1.delete()
+                    return redirect('/blog/'+category+'/'+ pk)
+                else:
+                    # Yorumun sahibi değilse hata mesajı göster
+                    messages.warning(request, "Bu yorumu silme izniniz yok.")
+                    return redirect('/blog/'+category+'/'+ pk)
+        else:
+            messages.warning(request, "Yorumu silebilmek için lütfen giriş yapınız!!")
+            return redirect('loginPage')
+
         text = request.POST.get("text")
         comment = Comment(text=text,subject_brand=subject,author=request.user,image= user.image,game_cate=games)
         comment.save()
@@ -90,10 +110,10 @@ def postDetail(request, category, pk):
         subject.save()
         user.comment_user +=1
         user.save()
-        
-        return redirect('/blog/'+category+'/'+ pk )
+
+        return redirect('/blog/'+category+'/'+ pk )  
     
-    
+
     print("usssssssssssssssser", user)
     context = {
         "comments":comments,
@@ -102,9 +122,10 @@ def postDetail(request, category, pk):
         'subject_author':subject_author,
         "user":user
         }
-    
+
     return render(request,'postDetail.html',context)
-    
+        
+        
 
 def messagePost(request, game_slug):
     comment_number = 0
