@@ -68,9 +68,14 @@ body.dark-mode .post-bg{
 }
 
 body.dark-mode .table tbody {
+<<<<<<< HEAD
     background: var(--bg-card-color-2);
 }
 
 body.dark-mode .forumlar .card:nth-child(2n) *{
     color: white !important;
   }
+=======
+    background:var(--bg-card-color-2) !important;
+}
+>>>>>>> d18bc7f8e2975924d7e280c8a513d15165a1da2f
