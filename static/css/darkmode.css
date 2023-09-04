@@ -1,8 +1,8 @@
-:root{
-    --bg-card-color-1:rgb(26, 27, 27);
-    --bg-card-color-2:rgb(55, 58, 58);
-    --bg-card-color-3:rgb(53, 52, 52);
-    --bg-card-color-4:rgb(45, 48, 55);
+:root {
+    --bg-card-color-1: rgb(26, 27, 27);
+    --bg-card-color-2: rgb(55, 58, 58);
+    --bg-card-color-3: rgb(53, 52, 52);
+    --bg-card-color-4: rgb(45, 48, 55);
 
 }
 
@@ -12,8 +12,8 @@ body.dark-mode {
 }
 
 
-body.dark-mode .owl-carousel{
-    background-color:var(--bg-card-color-1);
+body.dark-mode .owl-carousel {
+    background-color: var(--bg-card-color-1);
 }
 
 body.dark-mode .owl-prev,
@@ -21,61 +21,138 @@ body.dark-mode .owl-next {
     color: rgb(91, 98, 116) !important;
 }
 
-body.dark-mode .forum-istatistik , body.dark-mode .forum-istatistik .nav-link, body.dark-mode .position *{
+body.dark-mode .forum-istatistik,
+body.dark-mode .forum-istatistik .nav-link,
+body.dark-mode .position * {
     background-color: var(--bg-card-color-1) !important;
     color: whitesmoke !important;
 }
 
 
-body.dark-mode thead *,  body.dark-mode .post, body.dark-mode .breadcrumbs__item ,body.dark-mode .breadcrumbs__item:after {
+body.dark-mode thead *,
+body.dark-mode .post,
+body.dark-mode .breadcrumbs__item,
+body.dark-mode .breadcrumbs__item:after {
     background-color: rgb(79, 86, 102) !important;
     color: whitesmoke;
 }
 
 
-body.dark-mode .forumlar .card:nth-child(even) , body.dark-mode .post, body.dark-mode .modal-content{
+body.dark-mode .forumlar .card:nth-child(even),
+body.dark-mode .post,
+body.dark-mode .modal-content {
 
     background-color: var(--bg-card-color-2);
     color: white;
 }
+
 body.dark-mode .forumlar .card:nth-child(odd) * {
     background-color: var(--bg-card-color-1);
     color: white;
 }
 
-body.dark-mode .main_right .card *{
+body.dark-mode .main_right .card * {
     background-color: var(--bg-card-color-3);
     color: white;
 }
-body.dark-mode footer, body.dark-mode .information *{
-    background-color:var(--bg-card-color-4);
+
+body.dark-mode footer,
+body.dark-mode .information * {
+    background-color: var(--bg-card-color-4);
     color: white;
 }
 
- body.dark-mode .breadcrumbs__item:hover{
+body.dark-mode .breadcrumbs__item:hover {
     background-color: rgb(114, 121, 134) !important;
- }
-body.dark-mode .border-subject {
-    background-color:var(--bg-card-color-4)  !important;
-    color: whitesmoke;
-}
-body.dark-mode .iconlar i {
-    color:whitesmoke;
 }
 
-body.dark-mode .post-bg{
+body.dark-mode .border-subject {
+    background-color: var(--bg-card-color-4) !important;
+    color: whitesmoke;
+}
+
+body.dark-mode .iconlar i {
+    color: whitesmoke;
+}
+
+body.dark-mode .post-bg {
     background: black !important;
 }
 
 body.dark-mode .table tbody {
-<<<<<<< HEAD
+
     background: var(--bg-card-color-2);
 }
 
-body.dark-mode .forumlar .card:nth-child(2n) *{
-    color: white !important;
-  }
-=======
-    background:var(--bg-card-color-2) !important;
+body.dark-mode .forumlar .card:nth-child(2n) * {
+    color: whitesmoke !important;
 }
->>>>>>> d18bc7f8e2975924d7e280c8a513d15165a1da2f
+
+
+body.dark-mode .owlgreenBtn {
+    color: whitesmoke !important;
+}
+
+body.dark-mode .active>.page-link,
+.page-link.active {
+    color: whitesmoke !important;
+    background-color: rgb(114, 121, 134) !important;
+}
+
+body.dark-mode .page-item:not(:first-child) .page-link:hover {
+    background-color: var(--bg-card-color-4);
+    color: whitesmoke;
+}
+
+body.dark-mode .page-item:first-child .page-link {
+    background-color: var(--bg-card-color-4);
+    color: whitesmoke;
+}
+
+body.dark-mode section {
+
+    background: var(--bg-card-color-2);
+}
+
+body.dark-mode .nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: rgb(114, 121, 134) !important;
+    color: white;
+}
+
+body.dark-mode .nav-item a {
+    color: gray;
+}
+
+body.dark-mode .colorclass a {
+    color: gray;
+}
+
+body.dark-mode .form-check-input[type="checkbox"]:checked {
+    background-image: none;
+    background-color: gray !important;
+}
+
+body.dark-mode .form-check-input:checked {
+    border-color: gray !important;
+}
+
+body.dark-mode .orangeBG{
+    background-color: rgb(114, 121, 134) !important;
+        color: white;
+}
+
+body.dark-mode .orangeBG:hover{
+    background-color: var(--bg-card-color-1) !important;
+    color: white;
+}
+
+body.dark-mode .orangeBtn{
+    background-color: var(--bg-card-color-4) !important;
+        color: white;
+}
+
+body.dark-mode .orangeBtn:hover{
+    background-color: grey !important;
+        color: white;
+}
